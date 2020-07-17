@@ -1,0 +1,11 @@
+
+NAME : Krunal Binekar
+ROLL NO : 200240520045
+Assignment –3
+
+1.Does ANSI recognize the data type DATE?
+Ans : Yes, DATE datatype complies with ANSI as Well as ISO standards.
+
+
+2.Which subdivision of SQL is used to insert values in tables?
+Ans :The subdivision that insertsvalues intotables is DML (Data Manipulation Language). It also has two other statements UPDATEand DELETE.
