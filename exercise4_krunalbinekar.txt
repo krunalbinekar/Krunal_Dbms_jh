@@ -1,0 +1,55 @@
+Name: Krunal Binekar
+ID:-200240520045
+Exercise-4
+
+
+
+1. Display the minimum Status in the Supplier table.
+
+-> select min(status) from s;
+
+
+2. Display the maximum Weight in the Parts table.
+
+-> select max(weight) from p;
+
+
+3. Display the average Weight of the Parts.  
+
+-> select avg(weight) from p;
+
+
+4. Display the total Quantity sold for part ‘P1’.
+
+-> select sum(qty) from spj where `s#`='P1';
+
+
+5. Display the total Quantity sold for each part.
+
+-> select `p#`,sum(qty) from spj order by `p#`;
+
+
+6. Display the average Quantity sold for each part.
+
+-> select `p#`,avg(qty) from spj order by `p#`;
+
+
+7. Display the maximum Quantity sold for each part, provided the maximum Quantity is greater than 800.
+
+-> select `P#`, max(qty) from spj where max(qty)>800 order by `P#`;
+
+
+8. Display the Status and the count of Suppliers with that Status.
+
+-> select  status,count(`s#`) from S;
+
+
+9. Display the count of Projects going on in different cities.
+
+-> select count(distinct city) from p;
+
+
+10. What is the difference between COUNT(Status) and COUNT(*) ?
+
+-> count(status) will give no of status in status coloumn and count(*) will give count of all the rows are present in my table.
+
