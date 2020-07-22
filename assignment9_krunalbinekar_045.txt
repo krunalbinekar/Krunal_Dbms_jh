@@ -1,0 +1,76 @@
+Name: Krunal Binekar
+ID:- 200240520045
+Assignment 9
+
+
+
+
+1) Write a query that lists each order number followed by the name of the customer who made the order.
+
+-> mysql> select onum,cname from customers,orders where customers.cnum=orders.cnum;
++------+----------+
+| onum | cname    |
++------+----------+
+| 3001 | Cisneros |
+| 3003 | Hoffman  |
+| 3002 | Pereira  |
+| 3005 | Liu      |
+| 3006 | Cisneros |
+| 3009 | Giovanni |
+| 3007 | Grass    |
+| 3008 | Clemens  |
+| 3010 | Grass    |
+| 3011 | Clemens  |
++------+----------+
+
+
+
+2)Write  a  query  that  gives  the  names  of  both  the  salesperson  and  the  customer  for each order along with theorder number.
+
+-> mysql> select onum,cname,sname from customers,orders,salespeople where customers.cnum=orders.cnum and orders.snum=salespeople.snum;
++------+----------+---------+
+| onum | cname    | sname   |
++------+----------+---------+
+| 3003 | Hoffman  | Peel    |
+| 3009 | Giovanni | Axelord |
+| 3005 | Liu      | Serres  |
+| 3007 | Grass    | Serres  |
+| 3010 | Grass    | Serres  |
+| 3008 | Clemens  | Peel    |
+| 3011 | Clemens  | Peel    |
+| 3001 | Cisneros | Rifkin  |
+| 3006 | Cisneros | Rifkin  |
+| 3002 | Pereira  | Motika  |
++------+----------+---------+
+
+
+
+3)Write  a  query  that  produces  all  customers  serviced  by  salespeople  with  a commission  above  12%.  Output  the  customer’s  name,  the  salesperson’s  name, and the salesperson’s rate of commission.
+
+mysql> select cname,sname,comm from customers,salespeople where comm>0.12 and customers.snum=salespeople.snum;
++-----------+--------+------+
+| cname     | sname  | comm |
++-----------+--------+------+
+| Liu       | Serres | 0.13 |
+| Grass     | Serres | 0.13 |
+| Cisneros  | Rifkin | 0.15 |
++-----------+--------+------+
+
+
+
+4) Write a query that calculates the amount of the salesperson’s commission on each order by a customer with a rating above 100.
+
+mysql> select amt,comm from salespeople,orders,customers where rating>100 and customers.snum=salespeople.snum and orders.snum=salespeople.snum;
++---------+------+
+| amt     | comm |
++---------+------+
+|   18.69 | 0.15 |
+| 5160.45 | 0.13 |
+| 5160.45 | 0.13 |
+| 1098.16 | 0.15 |
+| 1713.23 | 0.10 |
+|   75.75 | 0.13 |
+|   75.75 | 0.13 |
+| 1309.95 | 0.13 |
+| 1309.95 | 0.13 |
++---------+------+
