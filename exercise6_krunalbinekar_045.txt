@@ -1,0 +1,30 @@
+NAME : Krunal Binekar.
+ROLLNO : 200240520045
+MySQL Exercise –6
+
+1.Display all the Suppliers with the same Status as the supplier, ‘CLARK.
+Query:-select sname, status from supplier where status = (select status from supplier where sname='Clark');
+
+2.Display all the Employees in the same department as the employee ‘MILLER’.
+Query:-select empno, empname from semp where deptno = (select deptno from semp where empname='Miller');
+
+3.Display all the Parts which have more Weight than all the Red parts.
+Query:-select `P#`, pname from parts where weight > (select sum(weight) from parts where color='Red');
+
+4.Display all the Projects going on in the same city as the project ‘TAPE’.
+Query:-select jname, city from projects where city = (select city from projects where jname='TAPE');
+
+5.Display all the Parts with Weight less than all the Green parts.
+Query:-select `P#`, pname from parts where weight <(select sum(weight) from parts where color=’Green’);
+
+6.Display the name of the Supplier who has sold the maximum Quantity.
+Query:-select supplier.sname, supplier_parts_project.qty from supplier, supplier_parts_project where supplier_parts_project.`S#`=supplier.`S#` and qty = (select max(qty) from supplier_parts_project);
+
+7.Display the name ofthe Employee with the minimum Salary.
+Query:-select empname, basic from semp where basic = (select min(basic) from semp);
+
+8.Display the name of the Supplier who has sold the maximum overall Quantity.
+Query:-select supplier.sname as "SUPP NAME", sum(supplier_parts_project.qty) as "TOTAL SALES"  from supplier, supplier_parts_project where supplier_parts_project.`S#`=supplier.`S#` group by sname;
+
+9.Display the name of the Department with the maximum number of Employees.
+Query:-select  sdept.deptname, count(semp.deptno) as "EMPLOYEES" from semp, sdept where semp.deptno = sdept.deptno group by semp.deptno order by employees desc limit 1;
