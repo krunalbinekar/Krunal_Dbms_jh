@@ -1,0 +1,229 @@
+Name: Krunal Binekar
+ID: 200240520045	
+PL Exercise 1
+
+
+
+
+
+1. Write  a  program  that  computes  the  perimeter  and  the  area  of  a  rectangle.  Define your own values for the length and width. (Assuming that Land Ware the length and width of the rectangle, Perimeter = 2*(L+W)and Area = L*W
+
+-> delimiter //
+
+create procedure peri(L float(7,2),W float(7,2))
+
+begin
+   
+   declare x float(7,2);
+   
+   declare y float(7,2);
+   
+   set x= 2*(L + W);
+   
+   set y= L * W;
+   
+ insert into tempp values (x,'Perimeter');
+   
+ insert into tempp values (y,'Area');
+   
+ end; //
+   
+delimiter ;
+   
+   
+
+call peri(20,30);
+   
+   
+
+select * from tempp;
+FIR     SEC
+-----------------
+100	Perimeter
+600	Area
+
+
+
+2. Write a program that declares an integer variable called num, assigns a value to it, and  computes  and  inserts  into  the  tempp  table  the  value of  the  variable  itself,  its square, and its cube.  
+
+->  delimiter //
+   
+    create procedure hel()
+   
+    begin
+    
+      declare num int(4);
+    
+      set num=6;
+    
+       insert into tempp values(num,num*num,num*num*num);
+    
+        end; //
+    
+    delimiter ;
+    
+    
+  
+   
+call hel();
+    
+    
+
+select * from tempp;
+FIR SEC THIRD
+-------------
+6   36  216
+
+
+
+3.Convert  a  temperature  in  Fahrenheit  (F)  to  its  equivalent  in  Celsius  (C)  and  vice versa. The required formulae are:-C= (F-32)*5/9   F= 9/5*C+ 32 
+
+->    delimiter //
+    
+      create procedure degree(C float(7,2),F float(7,2))
+	
+      begin
+      
+      declare x float(7,2);
+      
+      declare y float(7,2);
+      
+      set x= (F-32)*5/9;
+      
+      set y= 9/5*C + 32;
+      
+      insert into tempp values(x,'Temp in Celcius');
+      
+      insert into tempp values(y,'Temp in Fahrenheit');
+      
+      end; //
+      
+      delimiter ;
+      
+      
+   
+call degree(32,102);
+      
+      
+
+select * from tempp;
+
+FIR     SEC
+-----------------------
+39	Temp in Celcius
+90	Temp in Fahrenheit
+
+
+
+4.Convert a number of inches into yards, feet, and inches. For example, 124 inches equals 3 yards, 1 foot, and 4 inches.
+
+-> delimiter //
+    
+      create procedure inc(a float(7,2))
+	
+      begin
+      
+     b:=a/12;
+     c:=b / 3;
+     b:=b MOD 3;
+     a:=a MOD 12     
+      insert into tempp values(b,c,a);
+          
+      end; //
+      
+      delimiter ;
+ 
+
+call inc(124);
+
+
+select * from tempp;
+FIR SEC THIRD
+-------------
+3   1   4
+
+
+
+5. Write a program that enables a user to input an integer. The program should then state whether the integer is evenly divisible by 5.
+
+->  delimiter //
+    
+    create procedure numbe(x int(4))
+    
+    begin
+    
+     if (x mod 5=0) then
+    
+      insert into tempp values(x,'Divisible by 5');
+    
+    else
+     
+      insert into tempp values(x,'Not Divisible by 5');
+    
+    end if;
+    
+    end; //
+    
+    delimiter ;
+    
+    
+
+call numbe(10);
+    
+    
+
+select * from tempp;
+    
+FIR  SEC
+--------
+10   Divisible by 5
+
+call numbe(11);
+    
+
+select * from tempp;
+FIR  SEC
+--------
+11   NOT Divisible by 5
+
+
+
+6.Your block should read in two real numbers and tell whether the product of the two numbers is equal to or greater than 100.
+
+->  delimiter //
+   
+    create procedure ncheck(z int(4),y int(4))
+    
+    begin
+    
+    declare x int(4);
+    
+    set x=z * y;
+    
+     if (z * y)>=100 then
+    
+     insert into tempp values(x,'Number is Greater than or equal to 100');
+    
+     else
+    
+     insert into tempp values(x,'Number is smaller than or equal to 100');
+    
+    end if;
+    
+  end; //
+    
+delimiter ;
+    
+    
+
+
+call ncheck(10,10);
+
+select * from tempp;
+
+FIR  SEC
+-------------------------------------------
+100  Number is Greater than or equal to 100
+
+
+
