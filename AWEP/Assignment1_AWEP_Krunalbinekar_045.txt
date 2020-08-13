@@ -1,0 +1,193 @@
+1. VS Code Project Setup
+
+-> 1.open the visual studio code
+   2.In the navigation bar click on file menu
+   3.In file menu click on open folder
+   4.Now you can store all your html files in this folder
+   5.To create a Html file click on new and save it by .html extension for eg:- first.HTML.
+
+
+2. VS Code and Live Server Extension
+
+-> 1.Goto extensions search for live server
+   2.CLick on install then
+   3.In top help menu click on welcome
+   4.In welcome go to learn and click on find and run commands
+   5.In find and run commands search for "Live Server:open with live server"
+   6.And you are live with port no 5500
+   7.You can go live and offline by clicking on port number located on bottom right of your screen.
+   8.You can see all files of your folder on chrome browser
+   9.You can dynamically see changes side by side on your browser made to your html code.
+
+3. VS Code Source code format
+->
+
+4. HTML Syntax and Basic Tags, Typograhpy, Linking and Media Elments
+-> syntax: <html>
+               <head>
+                  <title>
+                  </title>
+               </head>
+             <body>
+              - 
+              -
+              -
+             </body>
+          </html>
+
+
+5. CSS Basics - Inline and Internal Styling
+
+-> <html>
+    <head>
+    <style>
+     .abc{
+        background-color: aqua;   //Internal CSS using class
+        color:black;
+        }
+     h3{
+         background-color: brown;  //CSS using Element
+       }
+     #id1{
+         color:yellowgreen       //Internal CSS using ID
+         }
+   </style>
+    </head>
+    <body>
+         <h1 class="abc">HELLO WELCOME </h1> //Heading tag
+         <h3>I AM FINE</h3>
+         <p style=color:blueviolet >Lorem ipsum dolor sit amet consectetur adipisicing elit. </p> //Inline CSS
+         <p id='id1'>Lorem ipsum dolor sit amet.</p>
+    <a href="2.html">Second page</a>        //FOR REFERENCING
+
+
+    </body>
+</html>
+
+
+
+6. CSS Selectors - Element, Id and Class Selectors
+-> <html>
+    <head>
+    <style>
+     .abc{
+        background-color: aqua;   //Internal CSS using class.Class starts with . symbol
+        color:black;
+        }
+     h3{
+         background-color: brown;  //CSS using Element
+       }
+     #id1{
+         color:yellowgreen       //Internal CSS using ID.ID starts with # symbol
+         }
+   </style>
+    </head>
+    <body>
+         <h1 class="abc">HELLO WELCOME </h1> //Heading tag  class selector used for single or more than single element to give same css property fror more tah 2.
+         <h3>I AM FINE</h3>
+         <p style=color:blueviolet >Lorem ipsum dolor sit amet consectetur adipisicing elit. </p> //Inline CSS
+         <p id='id1'>Lorem ipsum dolor sit amet.</p>    // ID is used for giving unique id to an element and later than apply css property.
+    <a href="2.html">Second page</a>        //FOR REFERENCING
+
+
+    </body>
+</html>
+
+
+7. CSS Flexbox - Move Text element across the division area
+
+-> <html>
+    <head>
+<style>
+body{
+
+    background-color: blueviolet;
+}
+
+
+</style>
+    </head>
+
+    <body>
+        <div style="color: black; height: 100vh; display: flex; justify-content: center; align-items: center;";>
+<h1>HELLO HOW ARE YOU</h1>
+  </div>
+
+    </body>
+</html>
+
+
+
+8. CSS Flexbox - Move Image element across the division area
+
+-> <html>
+    <head>
+<style>
+body{
+
+    background-color: blueviolet;
+}
+
+
+</style>
+    </head>
+
+    <body>
+        <div style="color: black; height: 100vh; display: flex; justify-content: center; align-items: center;";>
+<img src="https://picsum.photos/200/300">
+  </div>
+  
+    </body>
+</html>
+
+
+
+9. CSS Flexbox - Muliple blocks and move elment within each block
+->  <html>
+    <head>
+<style>
+    body{
+
+        margin: 0;
+    }
+
+</style>
+    </head>
+
+    <body>
+        <div style="color: black; height: 50vh; display: flex; justify-content: center; align-items: center; background-color: red;";>
+<h1>HELLO HOW ARE YOU</h1>
+  </div>
+
+  <div style="color:red; height: 50vh; display: flex; justify-content: center; align-items: center; background-color:blue;";>
+    <h1>hii</h1>
+
+  </div >
+
+    </body>
+</html>
+
+
+
+10. CSS Background - Linear Gradient
+
+-> <html>
+    <head>
+<style>
+    body{
+
+        margin: 0;
+    }
+
+
+</style>
+    </head>
+
+    <body>
+        <div style="color: black; height: 100vh; display: flex; justify-content: center; align-items: center; background:linear-gradient(orange,red);";>
+<h1>HELLO HOW ARE YOU</h1>
+  </div>
+
+
+    </body>
+</html>

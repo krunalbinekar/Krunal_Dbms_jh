@@ -1,0 +1,132 @@
+Assignment 8
+Krunal Binekar
+
+
+
+
+// Case - 1 :: calling setInterval
+setInterval(function () {
+  // logic here
+  console.log("I am interval, using annonymous!!");
+}, 1000);
+
+// Case - 2
+setInterval(() => {
+  // logic here
+  console.log("I am also interval, using Arrow");
+}, 1000);
+
+// Case - 3;
+let anfn = function () {
+  // logic here
+  console.log("I am getting uses as parameter inside the setinveral");
+};
+setInterval(anfn, 1000);
+
+
+et arr = [1, "A", 3.14, true, () => {}, 11, function () {}];
+
+// Case - 4
+// How to access any element in Array.
+// Using Index
+// Index start with 0
+let arr = ["Tejas", "Sachin", "Omkar", "Umesh", "Yaminee"];
+// lets access first element
+let firstItem = arr[0]; // Tejas
+let anyItem = arr[3]; // Umesh
+
+// Case 5
+
+let arr = ["Tejas", "Sachin", "Omkar", "Umesh", "Yaminee"];
+for (let i = 0; i < arr.length; i++) {
+  const item = arr[i];
+  console.log(item); // print or use it logic purpose
+}
+
+
+let arr = ["Tejas", "Sachin", "Omkar", "Umesh", "Yaminee"];
+// Add a new value to end of the array
+arr.push("Sanam");
+// Remove a value from the end of the array
+arr.pop();
+// Can we update value at certain index
+arr[0] = "Tejasss";
+
+
+let arr = ["Tejas", "Sachin", "Omkar", "Umesh", "Yaminee"]; // before
+arr.splice(2, 0, "sanam");
+let arr = ["Tejas", "Sachin", "Sanam", "Omkar", "Umesh", "Yaminee"]; // after
+
+// delete at index 4, second parameter is deleteCount
+arr.splice(4, 2);
+
+
+let arr = [1, 2, 3, 4, 5];
+for (let i = 0; i < arr.length; i++) {
+  const item = arr[i];
+  console.log(item); // print or use it logic purpose
+}
+
+
+
+
+let person = {
+  name: "Sachin",
+};
+
+let person = {
+  "first-name": "Sachin",
+};
+
+let person = {
+  firstName: "Sachin",
+};
+
+let person = {
+  id: 100,
+};
+
+let person = {
+  list: [1, 2, 3],
+};
+
+// RULE -3
+
+let person = {
+  id: 10,
+  firstName: "Sachin",
+  lastName: "Tendulkar",
+};
+
+// Rule - 4
+
+let person = {
+  id: 10,
+  firstName: "Sachin",
+  lastName: "Tendulkar",
+};
+
+let person = {
+  id: 10,
+  "first-name": "Sachin",
+  lastName: "Tendulkar",
+};
+
+let list = [1, 2, 3];
+let list = ["a", "b", "c"];
+
+// Array of Object :: Working on this tomorrow!!
+let list = [
+  {
+    id: 10,
+    firstName: "Sachin",
+  },
+  {
+    id: 11,
+    firstName: "Saurav",
+  },
+];
+
+// Array of object
+let person = { id: 1, firstName: "Virat" };
+let list = [person];

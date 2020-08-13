@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        html,body{
+            margin :0px;
+        }
+        .flip-card:hover {
+            transition: transform 0.9s;
+  transform: rotatez(360deg);
+}
+    </style>
+</head>
+<body>
+<div style=" height: 100vh; display:flex; flex-direction: column; background:url(https://picsum.photos/id/11/1300/601); background-repeat: no-repeat; background-size: cover;">
+  <div style="display: flex; flex:1; justify-content: space-between;">
+    <div style="font-size: large; font-weight: bold;padding: 8px; ">LINKS</div>
+    <div style="font-size: large; font-weight: bold;padding: 8px; "><!-- weather widget start --><a target="_blank" href="https://www.booked.net/weather/badlapur-394305"><img src="https://w.bookcdn.com/weather/picture/21_394305_1_1_3658db_250_2a48ba_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=124&domid=w209&anc_id=59832" alt="booked.net"/></a><!-- weather widget end --></div>
+  </div>
+
+
+    <div style="display: flex; flex:12;  justify-content: center;align-items: center; flex-direction: column;">
+        <div style="padding: 10px; font-size:50px; font-weight: bold;font-family: cursive;"><iframe src="http://free.timeanddate.com/clock/i7ek33tp/n4771/tlin/fn7/fs20/tct/pct/ftb/th2" frameborder="0" width="128" height="30" allowTransparency="true"></iframe>
+        </div>
+        <div class="flip-card"  style="padding: 10px; font-size:50px; font-weight: bold;font-family: cursive;">GOOD EVENING</div>
+    </div>
+
+
+    <div style="display: flex; flex:1; justify-content: space-between;align-items: center;">
+          <div style="font-size: large; font-weight: bold;padding: 8px; ">MUMBAI CLOUDS</div>
+          <div style="font-size: large; font-weight: bold;padding: 8px; ">“To escape criticism: do nothing, say nothing, be nothing.”</div>
+          <div style="font-size: large; font-weight: bold;padding: 8px; ">TODO</div>
+    
+    
+    
+    
+    
+    
+    </div>
+
+
+
+
+
+
+
+</div>
+</body>
+</html>
