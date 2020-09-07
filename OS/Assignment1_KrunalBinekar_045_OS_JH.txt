@@ -1,0 +1,311 @@
+Name: Krunal Binekar
+ID: 200240520045
+Juhu
+
+
+
+
+Q2.	A) Create three directory a b and c and create a.txt,b.txt and c.txt
+		in each directory respectively and then copy c directory into the a.
+	B)Move Directory b to c.
+	C)Create alias of ls -lh command to your name.
+	D)Change Directory name a to cdac.
+
+->  A . root@kali:~/Desktop/OS#  mkdir {a,b,c}
+
+        root@kali:~/Desktop/OS/a# touch a.txt
+
+        root@kali:~/Desktop/OS/b# touch b.txt
+
+        root@kali:~/Desktop/OS# cp -R c a
+ 
+    B . root@kali:~/Desktop/OS# mv b c
+
+    C.  root@kali:~/Desktop/OS# alias ls=krunal
+
+    D.  root@kali:~/Desktop/OS/a# mv a.txt cdac.txt
+
+
+Q3. A) Create five files file1.txt , file2.txt ,file3.txt file4.txt and
+    file5.txt with some text inside it. Search for 's' character
+    inside all the files using grep command.
+    Also Use cat to view all file content together.
+	B)Create file.txt using cat and edit that using nano editor.
+	c)Create 5 empty files using touch command
+	D)Remove previously created directory a , b and c.
+
+->  A. root@kali:~/Desktop/OS# touch {file1.txt,file2.txt,file3.txt,file4.txt,file5.txt}
+       
+        root@kali:~/Desktop/OS# grep 's' file[1-5].txt
+           file1.txt:shubham
+           file5.txt:shivam  
+ 
+    B.  touch {file1.txt,file2.txt,file3.txt,file4.txt,file5.txt}
+
+    c.  root@kali:~/Desktop/OS# cat > file.txt
+        root@kali:~/Desktop/OS# nano file.txt
+
+    D.  root@kali:~/Desktop/OS/a# rm -r c
+        root@kali:~/Desktop/OS# rm -r {a,c}
+
+
+Q4. Create a file with some content using vi editor
+	a) Display the file using cat command
+	b) Display line numbers along with content
+	c) Display the file in reverse order using tac
+	d) Combine multiple files using cat command
+
+->   root@kali:~/Desktop/OS# vi hello.txt
+     a.root@kali:~/Desktop/OS# cat hello.txt
+
+     b.root@kali:~/Desktop/OS# wc hello.txt
+
+     c.root@kali:~/Desktop/OS# tac hello.txt
+
+     d. root@kali:~/Desktop/OS# cat file1.txt file2.txt > file6.txt
+
+Q5. Create Random some files and sub directories.
+	a) display files row wise, column wise, 1 per row
+	b) sort the files in ascending, descending order
+	c) Create some hidden files and sub directories and display them using “ls -a”
+	d) Change time stamp of some files and directories using touch command and display the files using ls -t ls -rt
+	e) Recursive display contents of your home directory.
+	f) display all attributes of files and directories using ls -l
+	g) display attributes of a directory using ls -ld
+
+->   a.
+
+     b. root@kali:~/Desktop/OS# sort file6.txt
+        root@kali:~/Desktop/OS# sort -r file6.txt
+
+     c. root@kali:~/Desktop/OS# cat > .mypage.txt
+        hii how are you
+        root@kali:~/Desktop/OS# ls -a
+.       ..  city  .mypage.txt  old.hello.html
+
+     d. root@kali:~/Desktop/OS# touch -a file7.txt
+        root@kali:~/Desktop/OS# touch -m file8.txt
+        root@kali:~/Desktop/OS# ls -t
+        file8.txt  file7.txt  file6.txt  hello.txt  file.txt  file5.txt  file4.txt  file3.txt  file2.txt  file1.txt  old.hello.html  hello.txt.old  city
+        root@kali:~/Desktop/OS# ls -rt
+        city  hello.txt.old  old.hello.html  file1.txt  file2.txt  file3.txt  file4.txt  file5.txt  file.txt  hello.txt  file6.txt  file7.txt  file8.txt
+
+      e. root@kali:~/Desktop# du -a
+
+      f. root@kali:~/Desktop/OS# ls -l
+          root@kali:~/Desktop/OS# ls -l
+          total 36
+          -rw-r--r-- 1 root root 18 Sep  7 03:26 city
+          -rw-r--r-- 1 root root  8 Sep  7 09:42 file1.txt
+          -rw-r--r-- 1 root root  7 Sep  7 09:43 file2.txt
+          -rw-r--r-- 1 root root  5 Sep  7 09:43 file3.txt
+          -rw-r--r-- 1 root root  6 Sep  7 09:44 file4.txt
+          -rw-r--r-- 1 root root  7 Sep  7 09:44 file5.txt
+          -rw-r--r-- 1 root root 15 Sep  7 10:11 file6.txt
+          -rw-r--r-- 1 root root  0 Sep  7 10:21 file7.txt
+          -rw-r--r-- 1 root root  0 Sep  7 10:21 file8.txt
+          -rw-r--r-- 1 root root  7 Sep  7 09:50 file.txt
+          -rw-r--r-- 1 root root 16 Sep  7 10:02 hello.txt
+          -rw-r--r-- 1 root root  0 Sep  7 07:56 hello.txt.old
+          -rw-r--r-- 1 root root  0 Sep  7 07:57 old.hello.html
+
+      g. root@kali:~/Desktop/OS# ls -ld
+         drwxr-xr-x 2 root root 4096 Sep  7 10:21 .
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Q1. Create directory of your name and then create 4 files inside it named
+	a.txt, b.txt, c.txt and d.sh. And change the directory permission to
+	only user and also files permission to only user such that
+		a)user can read and write the file a.txt and b.txt
+		b)user can write the file c.txt
+		c)user can exectuable the file d.sh. Make
+			Contents of file d.sh:
+			#/bin/sh
+			ls -lh
+
+->   a. root@kali:~/Desktop/Krunal# chmod u+rw a.txt
+        root@kali:~/Desktop/Krunal# chmod u=rw a.txt
+        root@kali:~/Desktop/Krunal# chmod u+rw b.txt
+        root@kali:~/Desktop/Krunal# chmod u=rw b.txt
+
+     b. root@kali:~/Desktop/Krunal# chmod u=w c.txt 
+
+     c. root@kali:~/Desktop/Krunal# vi d.sh
+        root@kali:~/Desktop/Krunal# chmod u=x d.sh
+        root@kali:~/Desktop/Krunal# chmod +x d.sh
+        root@kali:~/Desktop/Krunal# ./d.sh
+        total 4.0K
+        -rwxr--r-- 1 root root  0 Sep  7 10:35 a.txt
+        -rw-r--r-- 1 root root  0 Sep  7 10:35 b.txt
+        --w-r--r-- 1 root root  0 Sep  7 10:35 c.txt
+        ---xr-xr-x 1 root root 16 Sep  7 10:46 d.sh
+
+        
+ Q2. Change the permission of the previous directory to executable only.
+	Analyze the output.
+
+->   root@kali:~/Desktop# chmod ugo-rw Krunal 
+     d--x--x--x 2 root root 4096 Sep  7 10:46 Krunal
+
+
+Q3. Change the permission of the previous directory to read only.
+	Analyze the output.
+
+->   root@kali:~/Desktop# chmod ugo+r  Krunal
+     dr-xr-xr-x 2 root root 4096 Sep  7 10:46 Krunal
+
+     root@kali:~/Desktop# chmod  ugo-x Krunal
+     dr--r--r-- 2 root root 4096 Sep  7 10:46 Krunal
+
+
+Q4. Use echo to list the all files of your home directory.
+
+->  root@kali:~/Desktop/OS# echo *
+    city file1.txt file2.txt file3.txt file4.txt file5.txt file6.txt file7.txt file8.txt file.txt hello.txt hello.txt.old old.hello.html
+ 
+
+Q5. Use echo to list the all files of /etc/ directory
+
+->   root@kali:~/Desktop# echo *  etc/directory
+
+
+Q6. Use echo to list the all files of /etc/ directory with extension name .conf
+
+->   
+
+Q7. Use echo to append your name to a.txt
+
+->   root@kali:~/Desktop/Krunal# echo 'krunal' >> a.txt
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1  Create Three level nested directory a,b and c
+   a)Create at least one hidden file in each directory
+   b)Create at least one normal text file in each directory
+   c)Copy c into a
+   d)Copy file inside a into b
+
+->   root@kali:~/Desktop# mkdir -p a/b/c
+     a. root@kali:~/Desktop/a# touch .hello.txt
+        root@kali:~/Desktop/a/b# touch .hello1.txt
+        root@kali:~/Desktop/a/b/c# touch .hello2.txt
+
+     b. root@kali:~/Desktop/a# touch file1.txt
+        root@kali:~/Desktop/a/b# touch file2.txt
+        root@kali:~/Desktop/a/b/c# touch file3.txt
+
+     c 
+
+     d. 
+
+2.	Change the third level directory c permission to read only
+
+->    root@kali:~/Desktop/a/b# chmod ugo-wx c
+
+3.	Try copying third level c directory to outside of a
+
+->   
+
+4     Create the directory  “data“ inside b
+
+->    root@kali:~/Desktop/a/b# mkdir data
+
+
+5.	Change the permission of b to read and write only
+
+->     root@kali:~/Desktop/a# chmod ugo-x b
+  
+6.	Create directory “data2”  inside b
+
+->     root@kali:~/Desktop/a/b# mkdir data
+
+7.	Create data.txt file inside b
+
+->     root@kali:~/Desktop/a/b# touch data.txt
+
+8.	Rename the second level directory c to copied_dir
+
+->      root@kali:~/Desktop/a/b# mv c copied_dir
+
+9.	Change permission of copied_dir to only executable
+
+->     root@kali:~/Desktop/a/b# chmod ugo+rw copied_dir
+
+10.	Try ls on copied_dir
+
+->       root@kali:~/Desktop/a/b/copied_dir# ls
+
+11.	Try moving copied_dir to outside of a
+
+->      
+12.	Try moving data directory outside of a
+
+->       root@kali:~/Desktop/a/b# cp copied_dir Desktop
+
+13.	Now change the owner of the directory a to root
+
+->     
+14.	Change permission of a to read write and executable to only user
+
+->      root@kali:~/Desktop# chmod go-rx a
+
+15.	Try creating directory sample inside a
+
+->      root@kali:~/Desktop/a# mkdir sample
+
+
+16.	Create directory x outside a
+
+->       root@kali:~/Desktop# mkdir x
+
+
+17.	Try moving x inside a
+
+->       root@kali:~/Desktop# mv x a
+
+ 
+18.	Create directory movies
+
+->      root@kali:~/Desktop# mkdir movies
+  
+19.	Change group of movies to sudo
+
+->
+
+20.	Change group of movies to avahi
+
+-> 
+21.	Try changing permission after changing ownership to root
+
+->
+22.	Try Changing permission after changing group to sudo without sudo
+
+->
+23.	Try Changing owner and group both to root
+
+->
+24.	Try changinging permission
+
+->
+25.	Try deleting the file
+
+->       root@kali:~/Desktop/a# rm movies
+
+
+
+
+
+
+
+        
+      
+
+
+
+
+
+
+        
