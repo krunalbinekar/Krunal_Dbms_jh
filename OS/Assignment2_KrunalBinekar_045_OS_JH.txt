@@ -34,7 +34,8 @@ f) Reversing a string
 
     a.  len= echo $str1 | wc -c
  
-    b.  
+    b.  str2=$str1
+        echo $str2
 
     c. str3=" $str2 Krunal"
        echo "$str3"
@@ -50,7 +51,10 @@ f) Reversing a string
 
 3.Write a shell script to rename all files in the current directory with numeric continuous value(Warning: Do this in a personal folder. Don't use Home directory) 
 
-->  
+->  for((i=1;i<10;i++))
+   do
+           mv a$i abbbb$i
+   done
 
 4. Write a script that print environment variable(Print $HOME,$PATH,$SHELL,$HISTORY,$LOGNAME,$TERM)
 
@@ -167,20 +171,49 @@ fi
 5. Write a program to print calendar of current month in next year,previous years.
 	For eg:-sep 2014,sep 2012 if current month is sep 2013	
 
-->  
+->  #!/bin/bash
+
+	mon=$(date | awk '{print $3}')
+	year=$(date | awk '{print $4}')
+
+	let "prev=year-1" "next=year+1"
+
+	cal $mon $prev
+	cal $mon $year
+	cal $mon $next
 
 6. Write a program to find sum and product of two no.s using 
 	a) let 
 	b)expr
 	c)bc
-->  echo -n "Enter the first number : " 
-read num1 
-echo -n "Enter the second number : " 
- 
-read num2 
- 
-sum=`expr $num1 + $num2` 
-echo "sum of two value is $sum" 
+->  #!/bin/bash
+
+	echo 'Enter num1 : '
+	read num1
+	echo 'Enter num2 : '
+	read num2
+	echo 'Enter num3 : '
+	read num3
+
+	(( avg = (( $num1+$num2+$num3 ))/3 ))
+	echo 'Average : '$avg
+
+> #!/bin/bash
+
+	echo 'Enter num1 : '
+	read num1
+	echo 'Enter num2 : '
+	read num2
+
+	let "prodlet=num1*num2"
+
+	prodExp=$(expr $num1 \* $num2)
+
+	echo 'Let : '
+	echo $prodlet 
+	echo 'Expr : '
+	echo $prodExp
+	echo 'BC : '
 
 7. Write a script to generate Fibonacci series.
 
@@ -215,20 +248,39 @@ echo "sum of two value is $sum"
 
 9.Write a shell script to reverse the list of strings and reverse each string further in the list.
 
--> if [ $# != 0 ]; then
-    len=`echo $@ | wc -c`
-    len=`expr $len - 1`
-    strrev=""
-    while test $len -gt 0
-    do
-        strrev1=`echo $@ | cut -c$len`
-        strrev=$strrev$strrev1
-        len=`expr $len - 1`
-    done
-    echo $strrev
-else
-    echo "ERROR: Retry with a list of strings."
-fi
+-> #!/bin/bash
+
+
+	echo 'Enter array of Strings : '
+	read -a arr
+
+	min=0
+	max=`expr ${#arr[@]} - 1`
+	x=$max
+	while (( $min <= $max ))
+	do
+		newArr[$min]=${arr[$max]}
+		newArr[$max]=${arr[$min]}
+		(( min++ ))
+		(( max-- ))
+	done
+
+	max=$x
+
+	for (( i=0; i<=max; i++ ))
+	do
+		rev=""
+		str=${newArr[$i]}
+		let "len=${#str} -1"
+		for (( j=$len; j>=0; j-- ))
+		do
+			rev="$rev${str:$j:1}"
+		done
+		newArr[$i]=$rev
+	done
+
+	echo ${newArr[@]}
+
 
 
 10. Write a shell script to print the reverse of an input number.
