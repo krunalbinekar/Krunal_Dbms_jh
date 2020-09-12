@@ -2,6 +2,100 @@ Name: Krunal Binekar
 ID: 200240520045
 Juhu
 
+Q1. Explore the following commands with various options, refer man pages for 
+    further help a) date b) cal c) bc d) echo e) who f) whoami g) logname g) uname h)
+    seq i) clear
+
+		a)  FORMAT controls the output.  Interpreted sequences are:
+
+
+		%a  : locale's abbreviated weekday name (e.g., Sun)
+
+		%A  :locale's full weekday name (e.g., Sunday)
+
+		%b  :locale's abbreviated month name (e.g., Jan)
+
+		%B  :locale's full month name (e.g., January)
+
+		%c  :locale's date and time (e.g., Thu Mar  3 23:05:25 2005)
+
+		%C  :century; like %Y, except omit last two digits (e.g., 20)
+
+		%d  :day of month (e.g., 01)
+
+		%D  :date; same as %m/%d/%y
+
+		%e  :day of month, space padded; same as %_d
+
+		%F  :full date; same as %Y\-%m\-%d
+
+		%g  :last two digits of year of ISO week number (see %G)
+
+		%G  :year of ISO week number (see %V); normally useful only with %V
+
+		%h  :same as %b
+
+		%H  :hour (00..23)
+
+		%I  :hour (01..12)
+
+		%j  :day of year (001..366)
+		 
+		%k  :hour, space padded ( 0..23); same as %_H
+
+		%l  :hour, space padded ( 1..12); same as %_I
+
+		%m  :month (01..12)
+
+		%M  :minute (00..59)
+
+		%n  :a newline
+		  
+		%N  :nanoseconds (000000000..999999999)
+		    
+		%p  :locale's equivalent of either AM or PM; blank if not known
+
+		%P  :like %p, but lower case
+
+		%r  :locale's 12\-hour clock time (e.g., 11:11:04 PM)
+
+		%R  :24\-hour hour and minute; same as %H:%M
+
+		%s  :seconds since 1970\-01\-01 00:00:00 UTC
+
+		%S  :second (00..60)
+
+		%t  :a tab
+
+		%T  :time; same as %H:%M:%S
+
+		%u  :day of week (1..7); 1 is Monday
+
+		%U  :week number of year, with Sunday as first day of week (00..53)
+
+		%V  :ISO week number, with Monday as first day of week (01..53)
+		 
+		%w  :day of week (0..6); 0 is Sunday
+
+		%W  :week number of year, with Monday as first day of week (00..53)
+		 
+		%x  :locale's date representation (e.g., 12/31/99)
+		 
+		%X  :locale's time representation (e.g., 23:13:48)
+		 
+		%y  :last two digits of year (00..99)
+
+		%Y  :year
+
+		%z  :+hhmm numeric time zone (e.g., \fB\-0400\fR)
+		 
+		%:z+hh:mm numeric time zone (e.g., \fB\-04\fR:00)
+
+		%::z+hh:mm:ss numeric time zone (e.g., \fB\-04\fR:00:00)
+
+		%:::z numeric time zone with : to necessary precision (e.g., \fB\-04\fR, +05:30)
+
+		%Z  :alphabetic time zone abbreviation (e.g., EDT)
 
 
 
@@ -67,7 +161,7 @@ Q4. Create a file with some content using vi editor
 Q5. Create Random some files and sub directories.
 	a) display files row wise, column wise, 1 per row
 	b) sort the files in ascending, descending order
-	c) Create some hidden files and sub directories and display them using “ls -a”
+	c) Create some hidden files and sub directories and display them using â€œls -aâ€
 	d) Change time stamp of some files and directories using touch command and display the files using ls -t ls -rt
 	e) Recursive display contents of your home directory.
 	f) display all attributes of files and directories using ls -l
@@ -168,12 +262,12 @@ Q4. Use echo to list the all files of your home directory.
 
 Q5. Use echo to list the all files of /etc/ directory
 
-->   root@kali:~/Desktop# echo *  etc/directory
+->   echo */*
 
 
 Q6. Use echo to list the all files of /etc/ directory with extension name .conf
 
-->   
+->   echo *.conf
 
 Q7. Use echo to append your name to a.txt
 
@@ -209,7 +303,7 @@ Q7. Use echo to append your name to a.txt
 
 ->   
 
-4     Create the directory  “data“ inside b
+4     Create the directory  â€œdataâ€œ inside b
 
 ->    root@kali:~/Desktop/a/b# mkdir data
 
@@ -218,7 +312,7 @@ Q7. Use echo to append your name to a.txt
 
 ->     root@kali:~/Desktop/a# chmod ugo-x b
   
-6.	Create directory “data2”  inside b
+6.	Create directory â€œdata2â€  inside b
 
 ->     root@kali:~/Desktop/a/b# mkdir data
 
@@ -273,23 +367,27 @@ Q7. Use echo to append your name to a.txt
   
 19.	Change group of movies to sudo
 
-->
+->      sudo usermod -aG sudo newuser
+
 
 20.	Change group of movies to avahi
 
--> 
+->     chgrp scifi myfile
+	
+	  ls -l myfile
 21.	Try changing permission after changing ownership to root
 
-->
+->    sudo chmod --recursive a+rwx /tmp
 22.	Try Changing permission after changing group to sudo without sudo
 
-->
+->    pkexec chmod go-w /usr/lib/sudo/sudoers.so
+
 23.	Try Changing owner and group both to root
 
-->
+->  sudo chown -R username:group directory
 24.	Try changinging permission
 
-->
+->     sudo usermod -aG sudo newuser
 25.	Try deleting the file
 
 ->       root@kali:~/Desktop/a# rm movies
